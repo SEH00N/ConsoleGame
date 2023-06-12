@@ -9,6 +9,12 @@ Vector2 Vector2::operator+(const Vector2& other)
 	return result;
 }
 
+Vector2 Vector2::operator-(const Vector2& other)
+{
+	Vector2 result(this->x - other.x, this->y - other.y);
+	return result;
+}
+
 Vector2 Vector2::operator+=(const Vector2& other)
 {
 	this->x += other.x;
