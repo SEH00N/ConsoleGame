@@ -17,5 +17,5 @@ public:
 public:
 	const Vector2& GetPosition() { return position; }
 	void SetPosition(const Vector2& position) { this->position = position; }
-};
+}typedef* PCamera;
 

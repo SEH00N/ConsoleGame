@@ -11,6 +11,27 @@ GameObject::~GameObject()
 			delete component;
 }
 
+void GameObject::Init()
+{
+}
+
+void GameObject::Update()
+{
+	for (PComponent component : components)
+		component->Update();
+}
+
+void GameObject::Release()
+{
+	for (auto iter = components.begin(); iter != components.end(); iter++)
+	{
+		(*iter)->Release();
+		iter = components.erase(iter);
+
+		delete* iter;
+	}
+}
+
 template<typename T>
 T GameObject::GetComponent()
 {
@@ -24,6 +45,12 @@ T GameObject::GetComponent()
 
 void GameObject::AddComponent(PComponent component)
 {
-	component->gameObject = this;
+	component->gameObject = static_cast<PGameObject>(this);
+	component->Init();
 	components.push_back(component);
+}
+
+void GameObject::Delete()
+{
+	scene->RemoveGameObject(static_cast<PGameObject>(this));
 }

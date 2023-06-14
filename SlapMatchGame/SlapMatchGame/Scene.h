@@ -1,19 +1,23 @@
 #pragma once
 
-#include "Engine.h"
+class GameObject typedef PGameObject;
 
-class GameObject;
+#include "Engine.h"
 
 class Scene
 {
+public:
+	Scene(PCamera cam);
+	~Scene();
+
 private:
 	std::vector<PGameObject> gameObjects;
-	Camera camera;
+	PCamera camera;
 
 public:
-	virtual void Init() abstract;
-	virtual void Update() abstract;
-	virtual void Release() abstract;
+	void Init();
+	void Update();
+	void Release();
 
 public:
 	void Render();	

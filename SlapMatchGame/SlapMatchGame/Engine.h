@@ -8,10 +8,10 @@
 #include "Enums.h"
 #include "Structure.h"
 #include "Input.h"
+#include "Camera.h"
 #include "Scene.h"
 #include "GameObject.h"
 #include "Component.h"
-#include "Camera.h"
 
 #define PI				3.1415926535
 #define Deg2Rad			PI / 180

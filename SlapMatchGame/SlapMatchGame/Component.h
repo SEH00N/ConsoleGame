@@ -1,6 +1,7 @@
 #pragma once
 
-#include "Engine.h"
+class GameObject typedef* PGameObject;
+//#include "Engine.h"
 
 class Component
 {
