@@ -1,5 +1,18 @@
 #include "Input.h"
 
+Input* Input::instance = nullptr;
+
+Input::Input()
+{
+	Init();
+}
+
+Input::~Input()
+{
+	if(instance)
+		delete instance;
+}
+
 void Input::Init()
 {
 	states.resize(KeyTypeCount, KeyState::None);
@@ -7,6 +20,7 @@ void Input::Init()
 
 void Input::Update()
 {
+	VK_UP;
 	BYTE asciiKeys[KeyTypeCount] = {};
 	if (::GetKeyboardState(asciiKeys) == false)
 		return;
@@ -14,6 +28,22 @@ void Input::Update()
 	for (int key = 0; key < KeyTypeCount; ++key)
 	{
 		KeyState& state = states[key];
+		
+		//switch (state)
+		//{
+		//case KeyState::None:
+		//	std::cout << "None";
+		//	break;
+		//case KeyState::Down:
+		//	std::cout << "Down";
+		//	break;
+		//case KeyState::Press:
+		//	std::cout << "Press";
+		//	break;
+		//case KeyState::Up:
+		//	std::cout << "Up";
+		//	break;
+		//}
 
 		if (asciiKeys[key] & 0x80) //해당 키가 입력됐을 때
 		{

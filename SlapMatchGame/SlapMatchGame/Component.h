@@ -1,9 +1,9 @@
 #pragma once
 
-class GameObject typedef* PGameObject;
-//#include "Engine.h"
+//typedef class GameObject* PGameObject;
+#include "Engine.h"
 
-class Component
+typedef class Component
 {
 public:
 	PGameObject gameObject;
@@ -16,4 +16,6 @@ public:
 public:
 	std::type_index GetType() { return typeid(*this); }
 
-}typedef* PComponent;
+}Component, *PComponent;
+//typedef class Component* PComponent;
+//}typedef* PComponent;

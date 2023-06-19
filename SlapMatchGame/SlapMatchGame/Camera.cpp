@@ -4,7 +4,7 @@ Camera::Camera(Vector2 boundingBox) : boundingBox{boundingBox}
 {
 }
 
-void Camera::Render(const Vector2& position, const char& character)
+void Camera::Render(const Vector2& position, const std::string& character)
 {
 	if ((this->position.x - (boundingBox.x / 2)) < position.x &&
 		position.x < (this->position.x + (boundingBox.x / 2)) &&

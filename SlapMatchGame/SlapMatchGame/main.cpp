@@ -1,11 +1,20 @@
 #include "Engine.h"
+#include "Project.h"
 
 int main()
 {
-	Camera cam({ 10, 10 });
+	SetConsoleCursor(false);
+	ShowWindow(GetConsoleWindow(), SW_MAXIMIZE);
+
+	Camera cam({ 15, 15 });
 	Scene scene(&cam);
 
-	GameObject player('бс');
+	GameObject player("бс");
+	player.SetPosition(0, 0);
+
+	PlayerMovement playerMovement;
+	player.AddComponent(&playerMovement);
+
 	scene.AddGameObject(&player);
 	
 	scene.Init();
@@ -13,7 +22,8 @@ int main()
 	while (true)
 	{
 		scene.Update();
-		Sleep(1 / 60);
+		scene.Render();
+		Sleep(DeltaTime);
 	}
 	
 	scene.Release();

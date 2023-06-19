@@ -10,10 +10,13 @@ Scene::~Scene()
 
 void Scene::Init()
 {
+	Input::GetInstance()->Init();
 }
 
 void Scene::Update()
 {
+	Input::GetInstance()->Update();
+
 	for (auto gameObject : gameObjects)
 		gameObject->Update();
 }

@@ -5,6 +5,22 @@
 class Input
 {
 private:
+	Input();
+	~Input();
+
+private:
+	static Input* instance;
+
+public:
+	static Input* GetInstance()
+	{
+		if (instance == nullptr)
+			instance = new Input();
+
+		return instance;
+	}
+
+private:
 	std::vector<KeyState> states;
 	Vector2 mousePosition;
 

@@ -133,6 +133,8 @@
     <ClInclude Include="Enums.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="PlayerMovement.h" />
+    <ClInclude Include="Project.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Structure.h" />
   </ItemGroup>
@@ -143,6 +145,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PlayerMovement.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Structure.cpp" />
   </ItemGroup>

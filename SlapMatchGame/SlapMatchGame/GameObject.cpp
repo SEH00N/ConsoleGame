@@ -1,6 +1,6 @@
 #include "GameObject.h"
 
-GameObject::GameObject(char character) : character{ character }
+GameObject::GameObject(std::string character) : character{ character }
 {
 }
 
@@ -45,12 +45,12 @@ T GameObject::GetComponent()
 
 void GameObject::AddComponent(PComponent component)
 {
-	component->gameObject = static_cast<PGameObject>(this);
+	component->gameObject = this; /*static_cast<PGameObject>(this);*/
 	component->Init();
 	components.push_back(component);
 }
 
 void GameObject::Delete()
 {
-	scene->RemoveGameObject(static_cast<PGameObject>(this));
+	scene->RemoveGameObject(this);
 }

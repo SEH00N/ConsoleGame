@@ -1,10 +1,10 @@
 #pragma once
 
-class GameObject typedef PGameObject;
-
+//class GameObject typedef PGameObject;
+typedef class GameObject* PGameObject;
 #include "Engine.h"
 
-class Scene
+typedef class Scene
 {
 public:
 	Scene(PCamera cam);
@@ -20,7 +20,7 @@ public:
 	void Release();
 
 public:
-	void Render();	
+	void Render();
 
 public:
 	void AddGameObject(PGameObject gameObject);
@@ -29,4 +29,5 @@ public:
 public:
 	std::type_index GetType() { return typeid(*this); }
 
-}typedef* PScene;
+}Scene, *PScene;
+//typedef* PScene;

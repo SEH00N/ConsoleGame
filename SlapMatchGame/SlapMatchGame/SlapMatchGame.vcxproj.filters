@@ -8,6 +8,12 @@
     <Filter Include="Engine">
       <UniqueIdentifier>{67be755d-85e2-4201-88fc-7f1f4c27792e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Project">
+      <UniqueIdentifier>{f7b2e6c3-aff2-4e47-b9a1-547b7b872114}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Project\Player">
+      <UniqueIdentifier>{36d90b9a-b68e-4bce-804e-738367a07d82}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Structure.h">
@@ -34,6 +40,12 @@
     <ClInclude Include="Camera.h">
       <Filter>Engine</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerMovement.h">
+      <Filter>Project\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Project.h">
+      <Filter>Project</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Structure.cpp">
@@ -58,5 +70,8 @@
       <Filter>Engine</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PlayerMovement.cpp">
+      <Filter>Project\Player</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
