@@ -10,10 +10,7 @@ void PlayerMovement::Update()
 	Vector2 moveDir;
 
 	if (Input::GetInstance()->GetKeyDown(KeyCode::Left))
-	{
 		moveDir.x -= 1;
-		std::cout << "left";
-	}
 	if (Input::GetInstance()->GetKeyDown(KeyCode::Right))
 		moveDir.x += 1;
 	if (Input::GetInstance()->GetKeyDown(KeyCode::Up))

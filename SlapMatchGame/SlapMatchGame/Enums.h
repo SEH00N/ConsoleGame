@@ -2,11 +2,11 @@
 
 enum class KeyCode
 {
-	Up = VK_UP,
-	Down = VK_DOWN,
-	Left = VK_LEFT,
-	Right = VK_RIGHT,
 	Space = VK_SPACE,
+	Left = VK_LEFT,
+	Up = VK_UP,
+	Right = VK_RIGHT,
+	Down = VK_DOWN,
 	END,
 };
 

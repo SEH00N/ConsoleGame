@@ -1,9 +1,9 @@
 #pragma once
 
 #include <vector>
+#include <iostream>
 #include <windows.h>
 #include <typeindex>
-#include <iostream>
 
 #include "Enums.h"
 #include "Structure.h"

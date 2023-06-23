@@ -35,5 +35,9 @@ public:
 	bool GetKeyUp(KeyCode keycode) { return GetState(keycode) == KeyState::Up; }
 
 private:
-	KeyState GetState(KeyCode keycode) { return states[static_cast<UINT8>(keycode)]; }
+	inline KeyState GetState(KeyCode keycode) 
+	{ 
+		int code = static_cast<UINT8>(keycode);
+		return states[code]; 
+	}
 };
