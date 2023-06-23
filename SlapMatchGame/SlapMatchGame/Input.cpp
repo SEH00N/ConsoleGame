@@ -20,16 +20,17 @@ void Input::Init()
 
 void Input::Update()
 {
-	BYTE asciiKeys[KeyTypeCount] = {};
+	BYTE asciiKeys[KeyTypeCount] = {0};
+
 	if (::GetKeyboardState(asciiKeys) == false)
 		return;
 
 	for (int key = 0; key < KeyTypeCount; ++key)
 	{
+		KeyState& state = states[key];
+
 		if (asciiKeys[key] & 0x80) //해당 키가 입력됐을 때
 		{
-			KeyState& state = states[key];
-
 			//그 전에도 누르고 있었다면 Press 상태
 			if (state == KeyState::Press || state == KeyState::Down)
 				state = KeyState::Press;
@@ -38,8 +39,6 @@ void Input::Update()
 		}
 		else //해당 키가 입력이 되지 않았을 때
 		{
-			KeyState& state = states[key];
-
 			//그 전에 누르고 있었다면 Up 상태
 			if (state == KeyState::Press || state == KeyState::Down)
 				state = KeyState::Up;
@@ -47,7 +46,7 @@ void Input::Update()
 				state = KeyState::None;
 		}
 	}
-
+	std::cout << '\n';
 	POINT mousePos;
 	::GetCursorPos(&mousePos);
 

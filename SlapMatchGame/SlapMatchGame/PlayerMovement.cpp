@@ -20,8 +20,8 @@ void PlayerMovement::Update()
 
 	Vector2 curPos = gameObject->GetPosition();
 	gameObject->SetPosition(curPos + moveDir);
-	std::cout << gameObject->GetPosition().x << ' ' << gameObject->GetPosition().y << ' ';
-	std::cout << moveDir.x << ' ' << moveDir.y;
+	//std::cout << gameObject->GetPosition().x << ' ' << gameObject->GetPosition().y << ' ';
+	//std::cout << moveDir.x << ' ' << moveDir.y;
 }
 
 void PlayerMovement::Release()
